@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { getToken } from './cache/cookies'
+import { ElMessage } from 'element-plus'
 
 function getInstance() {
   const instance = axios.create({
@@ -73,7 +74,7 @@ function getInstance() {
         default:
           break
       }
-      //  ElMessage.error(error.message)
+       ElMessage.error(error.message)
       return Promise.reject(error)
     }
   )
